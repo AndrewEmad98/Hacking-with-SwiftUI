@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A509F8E5-0B64-4ECD-AE7E-146F776F9D84"
+            uuid = "6F49F720-8AF3-4958-9BDA-D68094FFF1E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeSplit/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "body"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "totalPersonAmount"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

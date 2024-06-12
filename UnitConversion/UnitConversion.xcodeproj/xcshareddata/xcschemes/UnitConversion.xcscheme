@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4859FB222C12731B00E8DE06"
-               BuildableName = "WeSplit.app"
-               BlueprintName = "WeSplit"
-               ReferencedContainer = "container:WeSplit.xcodeproj">
+               BlueprintIdentifier = "485722A82C19054E006FEA9D"
+               BuildableName = "UnitConversion.app"
+               BlueprintName = "UnitConversion"
+               ReferencedContainer = "container:UnitConversion.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4859FB222C12731B00E8DE06"
-            BuildableName = "WeSplit.app"
-            BlueprintName = "WeSplit"
-            ReferencedContainer = "container:WeSplit.xcodeproj">
+            BlueprintIdentifier = "485722A82C19054E006FEA9D"
+            BuildableName = "UnitConversion.app"
+            BlueprintName = "UnitConversion"
+            ReferencedContainer = "container:UnitConversion.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -68,10 +68,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4859FB222C12731B00E8DE06"
-            BuildableName = "WeSplit.app"
-            BlueprintName = "WeSplit"
-            ReferencedContainer = "container:WeSplit.xcodeproj">
+            BlueprintIdentifier = "485722A82C19054E006FEA9D"
+            BuildableName = "UnitConversion.app"
+            BlueprintName = "UnitConversion"
+            ReferencedContainer = "container:UnitConversion.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
