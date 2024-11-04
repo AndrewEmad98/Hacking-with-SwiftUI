@@ -8,40 +8,64 @@
 import Observation
 import SwiftUI
 
+struct ExpenseItem: Identifiable, Codable{
+    var id = UUID()
+    let name:String
+    let type:String
+    let cost: Double
+}
 
-struct SecondView: View {
-    @Environment(\.dismiss) var dismiss
+@Observable
+class Expenses {
+    var items: [ExpenseItem] = [] {
+        didSet {
+            let encoder = JSONEncoder()
+            if let data = try? encoder.encode(items){
+                UserDefaults.standard.setValue(data, forKey: "expenses")
+            }
+        }
+    }
     
-    var body: some View {
-        Text("hello second sheet")
-        Button("dismiss"){
-            dismiss()
+    init() {
+        let decoder = JSONDecoder()
+        if let savedItems = UserDefaults.standard.data(forKey: "expenses"), let expenses = try? decoder.decode([ExpenseItem].self, from: savedItems){
+            self.items = expenses
         }
     }
 }
 
-@Observable
-class User {
-    var firstName:String = "Andrew"
-    var lastName: String = "Emad"
-}
-
 struct ContentView: View {
-    @State private var isPresented = false
-    @State private var user = User()
+    @State var isShowedAddItem = false
+    @State private var expenses = Expenses()
     var body: some View {
-        VStack {
-            Text("Your name is \(user.firstName) \(user.lastName)")
-            TextField("Your first name is", text: $user.firstName)
-            TextField("Your last name is", text: $user.lastName)
-            Button("Confirm") {
-                isPresented.toggle()
+        NavigationStack {
+            List {
+                ForEach(expenses.items) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(item.type)
+                        }
+                        Spacer()
+                        Text(item.cost, format: .currency(code: "USD"))
+                    }
+                }
+                .onDelete(perform: deleteItem)
+            }.navigationTitle("iExpense")
+            .toolbar() {
+                Button("Add Expense", systemImage: "plus") {
+                    isShowedAddItem.toggle()
+                }
+            }
+            .sheet(isPresented: $isShowedAddItem) {
+                AddView(expenses: self.expenses)
             }
         }
-        .padding()
-        .sheet(isPresented: $isPresented, content: {
-            SecondView()
-        })
+    }
+    
+    private func deleteItem(at offsets: IndexSet){
+        expenses.items.remove(atOffsets: offsets)
     }
 }
 
